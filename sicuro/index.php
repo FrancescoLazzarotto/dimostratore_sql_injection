@@ -6,7 +6,7 @@
     <!-- Colonna sinistra: form di login -->
     <div class="col-sm-5">
         <?php if (!$autenticato): ?>
-        <h2>accedi al tuo conto</h2>
+        <h2>Accedi al tuo conto</h2>
         <form id="loginForm" method="post" action="common/dialog_manager.php?action=login">
             <p>
                 <label for="username">nome utente</label><br />
@@ -24,7 +24,7 @@
         </form>
 
         <?php else: ?>
-        <h2>sei gi&agrave; autenticato.</h2>
+        <h2>Sei gi&agrave; autenticato.</h2>
         <p><a href="dashboard.php" class="btn btn-primary">vai al tuo conto &rarr;</a></p>
         <?php endif; ?>
     </div>
@@ -35,33 +35,33 @@
         <!-- box: spiegazione della correzione -->
         <div class="panel panel-success">
             <div class="panel-heading">
-                <strong>prepared statements</strong>
+                <strong>Prepared statements</strong>
             </div>
             <div class="panel-body">
                 <p>
-                    in questa versione, la funzione <code>verifica_login()</code> usa
+                    In questa versione, la funzione <code>verifica_login()</code> usa
                     <strong>prepared statements</strong>. la struttura sql &egrave; fissa
                     e inviata al database separatamente dai valori dell'input.
                 </p>
-                <p><strong>provando i payload della versione vulnerabile vedremo come il sistema protegga l'accesso</strong></p>
+                <p><strong>Provando i payload della versione vulnerabile vedremo come il sistema protegga l'accesso</strong></p>
                 <table class="table table-bordered table-sm">
-                    <thead><tr><th>payload</th><th>risultato atteso</th></tr></thead>
+                    <thead><tr><th>Payload</th><th>Risultato atteso</th></tr></thead>
                     <tbody>
                         <tr>
                             <td><code>admin' -- </code></td>
-                            <td class="text-danger">login fallito</td>
+                            <td class="text-danger">Login fallito</td>
                         </tr>
                         <tr>
                             <td><code>' OR '1'='1' -- </code></td>
-                            <td class="text-danger">login fallito</td>
+                            <td class="text-danger">Login fallito</td>
                         </tr>
                         <tr>
                             <td><code>alice' -- </code></td>
-                            <td class="text-danger">login fallito</td>
+                            <td class="text-danger">Login fallito</td>
                         </tr>
                         <tr>
                             <td><code>admin</code> + <code>admin123</code></td>
-                            <td class="text-success">login riuscito</td>
+                            <td class="text-success">Login riuscito</td>
                         </tr>
                     </tbody>
                 </table>

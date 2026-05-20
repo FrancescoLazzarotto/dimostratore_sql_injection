@@ -35,7 +35,7 @@
             <?php if ($autenticato): ?>
             <div class="col-sm-4 text-right">
                 <p>
-                    benvenuto, <strong><?php echo htmlspecialchars($nome_utente); ?></strong>
+                    Benvenuto, <strong><?php echo htmlspecialchars($nome_utente); ?></strong>
                     &nbsp;|&nbsp;
                     <a href="common/dialog_manager.php?action=logout">logout</a>
                 </p>

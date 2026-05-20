@@ -14,33 +14,33 @@
 <div class="row">
     <!-- dati del conto -->
     <div class="col-sm-7">
-        <h2>benvenuto, <?php echo htmlspecialchars($nome_completo); ?></h2>
+        <h2>Benvenuto, <?php echo htmlspecialchars($nome_completo); ?></h2>
         <p>
-            <span class="label label-default">ruolo: <?php echo htmlspecialchars($ruolo_utente); ?></span>
+            <span class="label label-default">Ruolo: <?php echo htmlspecialchars($ruolo_utente); ?></span>
             &nbsp;
-            <span class="label label-default">id utente: <?php echo (int)$id_utente; ?></span>
+            <span class="label label-default">Id utente: <?php echo (int)$id_utente; ?></span>
         </p>
 
-        <h3>il tuo conto corrente</h3>
+        <h3>Il tuo conto corrente</h3>
         <?php if ($conto_utente): ?>
         <table class="table table-bordered">
             <tr>
-                <th>numero conto</th>
+                <th>Numero conto</th>
                 <td><code><?php echo htmlspecialchars($conto_utente['numero_conto']); ?></code></td>
             </tr>
             <tr>
-                <th>saldo disponibile</th>
+                <th>Saldo disponibile</th>
                 <td class="saldo-positivo">
                     &euro; <?php echo number_format((float)$conto_utente['saldo'], 2, ',', '.'); ?>
                 </td>
             </tr>
             <tr>
-                <th>ultima operazione</th>
+                <th>Ultima operazione</th>
                 <td><?php echo htmlspecialchars($conto_utente['ultima_operazione']); ?></td>
             </tr>
         </table>
         <?php else: ?>
-        <div class="alert alert-info">nessun conto bancario associato a questo utente.</div>
+        <div class="alert alert-info">Nessun conto bancario associato a questo utente.</div>
         <?php endif; ?>
     </div>
 
@@ -48,7 +48,7 @@
     <div class="col-sm-5">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <strong>accesso legittimo confermato</strong>
+                <strong>Accesso legittimo confermato</strong>
             </div>
             <div class="panel-body">
                 <?php if (isset($_SESSION['input_usato'])): ?>
@@ -57,12 +57,12 @@
                 <hr />
                 <?php endif; ?>
                 <p>
-                    hai effettuato l'accesso fornendo credenziali corrette.
+                    Hai effettuato l'accesso fornendo credenziali corrette.
                     l'uso dei prepared statements ha garantito che nessun payload sql
                     potesse manipolare la query di autenticazione.
                 </p>
                 <p>
-                    qualunque tentativo di sql injection nel form di login
+                    Qualunque tentativo di sql injection nel form di login
                     viene neutralizzato: l'input viene cercato letteralmente
                     come stringa nel database.
                 </p>

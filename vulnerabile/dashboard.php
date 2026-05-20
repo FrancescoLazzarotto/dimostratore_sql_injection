@@ -14,22 +14,22 @@
 <div class="row">
     <!-- dati del conto -->
     <div class="col-sm-7">
-        <h2>benvenuto, <?php echo htmlspecialchars($nome_completo); ?></h2>
+        <h2>Benvenuto, <?php echo htmlspecialchars($nome_completo); ?></h2>
         <p>
-            <span class="label label-default">ruolo: <?php echo htmlspecialchars($ruolo_utente); ?></span>
+            <span class="label label-default">Ruolo: <?php echo htmlspecialchars($ruolo_utente); ?></span>
             &nbsp;
-            <span class="label label-default">id utente: <?php echo (int)$id_utente; ?></span>
+            <span class="label label-default">Id utente: <?php echo (int)$id_utente; ?></span>
         </p>
 
-        <h3>il tuo conto corrente</h3>
+        <h3>Il tuo conto corrente</h3>
         <?php if ($conto_utente): ?>
         <table class="table table-bordered">
             <tr>
-                <th>numero conto</th>
+                <th>Numero conto</th>
                 <td><code><?php echo htmlspecialchars($conto_utente['numero_conto']); ?></code></td>
             </tr>
             <tr>
-                <th>saldo disponibile</th>
+                <th>Saldo disponibile</th>
                 <td class="saldo-positivo">
                     &euro; <?php echo number_format((float)$conto_utente['saldo'], 2, ',', '.'); ?>
                 </td>
@@ -40,7 +40,7 @@
             </tr>
         </table>
         <?php else: ?>
-        <div class="alert alert-info">nessun conto bancario associato a questo utente.</div>
+        <div class="alert alert-info">Nessun conto bancario associato a questo utente.</div>
         <?php endif; ?>
     </div>
 
@@ -48,22 +48,22 @@
     <div class="col-sm-5">
         <div class="panel panel-danger">
             <div class="panel-heading">
-                <strong>accesso ottenuto </strong>
+                <strong>Accesso ottenuto </strong>
             </div>
             <div class="panel-body">
                 <?php if (isset($_SESSION['debug_query'])): ?>
-                <p><strong>query usata per il login:</strong></p>
+                <p><strong>Query usata per il login:</strong></p>
                 <pre class="query-debug"><?php echo htmlspecialchars($_SESSION['debug_query']); ?></pre>
                 <hr />
                 <?php endif; ?>
                 <p>
-                    usando un payload sql injection, si e'<strong>bypassata
+                    Usando un payload sql injection, si e'<strong>bypassata
                     l'autenticazione</strong> senza conoscere la password.
                     si visualizzano ora i dati sensibili (numero conto e saldo)
                     dell'utente a cui si e' fatto l'accesso.
                 </p>
                 <p>
-                    in un sistema reale, questo potrebbe consentire accesso a dati
+                    In un sistema reale, questo potrebbe consentire accesso a dati
                     finanziari, operazioni non autorizzate o bypass di privilegi.
                 </p>
             </div>

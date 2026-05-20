@@ -56,7 +56,7 @@ function ottieni_conto_utente($id_utente) {
 }
 
 // vulnerabile: concatenazione diretta dell'input nella query
-function ricerca_utenti($termine, &$query_debug, &$tempo_ms, &$messaggio_errore) {
+function ricerca_utenti($termine, &$query_debug,  &$messaggio_errore) {
     $connessione = connetti_database();
 
     $query = "SELECT id, username, nome_completo, ruolo "
@@ -66,9 +66,6 @@ function ricerca_utenti($termine, &$query_debug, &$tempo_ms, &$messaggio_errore)
 
     $query_debug = $query;
 
-    $inizio = microtime(true);
-    $risultato = mysqli_query($connessione, $query);
-    $tempo_ms = (microtime(true) - $inizio) * 1000;
 
     $righe = array();
     $messaggio_errore = '';
