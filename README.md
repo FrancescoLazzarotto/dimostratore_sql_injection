@@ -1,3 +1,4 @@
+Progetto per il corso: Web sicuro e personalizzato - modulo: Web Sicuro
 # Dimostratore: SQL Injection — Bypass del Login
 
 ## Vulnerabilità dimostrata
