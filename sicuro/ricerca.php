@@ -69,7 +69,7 @@
                 <p class="small">
                     Qualunque payload SQL viene trattato come stringa letterale.
                 </p>
-                <p><strong>Prova i payload della versione vulnerabile:</strong></p>
+                <p><strong>Payload della versione vulnerabile:</strong></p>
                 <table class="table table-bordered table-sm">
                     <thead><tr><th>Payload</th><th>Risultato atteso</th></tr></thead>
                     <tbody>
