@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <p>Applicazione dimostrativa  <strong>Versione Sicura</strong> con Prepared Statements</p>
+                <p>Applicazione sicura</p>
             </div>
         </div>
     </div>

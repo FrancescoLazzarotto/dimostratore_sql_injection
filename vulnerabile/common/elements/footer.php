@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <p> applicazione dimostrativa -- versione vulnerabile a sql injection  </p>
+                <p> applicazione vulnerabile  </p>
             </div>
         </div>
     </div>
