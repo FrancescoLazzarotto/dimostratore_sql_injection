@@ -85,13 +85,10 @@
                             <td>Bypass filtro e mostra tutti gli utenti</td>
                         </tr>
                         <tr>
-                            <td><code>%' UNION SELECT id, numero_conto, saldo, ultima_operazione FROM conti -- </code></td>
+                            <td><code>' UNION SELECT id, numero_conto, saldo, ultima_operazione FROM conti -- </code></td>
                             <td>Exfiltra dati dai conti</td>
                         </tr>
-                        <tr>
-                            <td><code>%' OR IF(1=1, SLEEP(2), 0) -- </code></td>
-                            <td>time-based: ritardo nella risposta</td>
-                        </tr>
+                       
                     </tbody>
                 </table>
             </div>

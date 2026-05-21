@@ -57,7 +57,7 @@
                 <hr />
                 <?php endif; ?>
                 <p>
-                    Usando un payload sql injection, si e'<strong>bypassata
+                    Usando un payload sql injection, si è <strong>bypassata
                     l'autenticazione</strong> senza conoscere la password.
                     si visualizzano ora i dati sensibili (numero conto e saldo)
                     dell'utente a cui si e' fatto l'accesso.

@@ -6,7 +6,7 @@
     $elapsed_ms = 0.0;
 
     if ($q !== '') {
-        $results = searchUsers($q, $elapsed_ms);
+        $results = ricerca_utenti($q, $elapsed_ms);
     }
 ?>
 
@@ -80,10 +80,6 @@
                         <tr>
                             <td><code>%' UNION SELECT id, numero_conto, saldo, ultima_operazione FROM conti -- </code></td>
                             <td class="text-danger"> Nessuna esfiltrazione</td>
-                        </tr>
-                        <tr>
-                            <td><code>%' OR IF(1=1, SLEEP(2), 0) -- </code></td>
-                            <td class="text-danger"> Nessun ritardo</td>
                         </tr>
                     </tbody>
                 </table>

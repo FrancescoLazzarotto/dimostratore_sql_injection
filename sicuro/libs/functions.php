@@ -57,11 +57,11 @@ function ottieni_conto_utente($id_utente) {
     return $riga;
 }
 
-// escapi wildcard per like in modo sicuro
+// escapi wildcard per like in modo sicuro usando ! come carattere di escape
 function escapi_like($valore) {
-    $valore = str_replace("\\", "\\\\", $valore);
-    $valore = str_replace("%", "\\%", $valore);
-    $valore = str_replace("_", "\\_", $valore);
+    $valore = str_replace("!", "!!", $valore);
+    $valore = str_replace("%", "!%", $valore);
+    $valore = str_replace("_", "!_", $valore);
     return $valore;
 }
 
@@ -69,13 +69,13 @@ function escapi_like($valore) {
 function ricerca_utenti($termine, &$tempo_ms) {
     $connessione = connetti_database();
 
-    $sql = "SELECT id, username, nome_completo, ruolo "
+    $query = "SELECT id, username, nome_completo, ruolo "
          . "FROM utenti "
-         . "WHERE username LIKE CONCAT('%', ?, '%') ESCAPE '\\' "
-         . "OR nome_completo LIKE CONCAT('%', ?, '%') ESCAPE '\\'";
+            . "WHERE username LIKE CONCAT('%', ?, '%') ESCAPE '!' "
+            . "OR nome_completo LIKE CONCAT('%', ?, '%') ESCAPE '!'";
 
     $termine = escapi_like($termine);
-    $istruzione = mysqli_prepare($connessione, $sql);
+    $istruzione = mysqli_prepare($connessione, $query);
     mysqli_stmt_bind_param($istruzione, "ss", $termine, $termine);
 
     $inizio = microtime(true);

@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <p> applicazione vulnerabile  </p>
+                <p> Applicazione Vulnerabile  </p>
             </div>
         </div>
     </div>

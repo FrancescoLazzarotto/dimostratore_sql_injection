@@ -66,13 +66,16 @@ function ricerca_utenti($termine, &$query_debug,  &$messaggio_errore) {
 
     $query_debug = $query;
 
-
     $righe = array();
     $messaggio_errore = '';
+
+    $risultato = mysqli_query($connessione, $query);
+
     if ($risultato) {
         while ($riga = mysqli_fetch_assoc($risultato)) {
             $righe[] = $riga;
         }
+        mysqli_free_result($risultato);
     } else {
         $messaggio_errore = mysqli_error($connessione);
     }
